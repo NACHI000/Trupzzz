@@ -1,0 +1,9 @@
+// How can you calculate the mean of a numeric column grouped by a factor column in R?
+data <- data.frame( 
+  group = c('A', 'A', 'B', 'B', 'c', 'c'), 
+  score = c(85, 90, 78, 88, 92, 87) 
+)
+mean_scores <- tapply(data$score, data$group, mean) 
+print(mean_scores)
+aggregate_scores <- aggregate(score ~ group, data = data, FUN = mean) 
+print(aggregate_scores)
