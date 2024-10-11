@@ -1,0 +1,115 @@
+<?php
+include 'db.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About NCBI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Light background color */
+            color: #333;
+        }
+
+        header {
+            background: #004d99; /* Deep blue background */
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+            border-bottom: 4px solid #0099ff; /* Bright blue border */
+        }
+
+        main {
+            padding: 2em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 8px;
+            padding: 1.5em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2em;
+        }
+
+        .section h2 {
+            color: #004d99; /* Deep blue color for headings */
+            border-bottom: 2px solid #0099ff; /* Bright blue border */
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .section p {
+            margin: 0 0 1em;
+        }
+
+        .section a {
+            color: #004d99; /* Deep blue color for links */
+            text-decoration: none;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #004d99; /* Deep blue background */
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            border-top: 4px solid #0099ff; /* Bright blue border */
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 1em;
+            }
+
+            .section {
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About NCBI</h1>
+    </header>
+    <main>
+        <section class="section">
+            <h2>What is NCBI?</h2>
+            <p>The National Center for Biotechnology Information (NCBI) is a part of the National Institutes of Health (NIH). It provides access to a wealth of biomedical and genomic information through a variety of databases and tools. NCBI's mission is to enhance and facilitate the understanding of molecular processes affecting health and disease.</p>
+        </section>
+
+        <section class="section">
+            <h2>Mission</h2>
+            <p>NCBI's mission is to provide access to biomedical and genomic information and to promote the use of these resources to advance research and improve health outcomes. The center supports the research community with tools for data analysis and provides public access to important health information.</p>
+        </section>
+
+        <section class="section">
+            <h2>Key Services</h2>
+            <ul>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>: A free search engine for accessing a comprehensive database of biomedical literature.</li>
+                <li><a href="https://www.ncbi.nlm.nih.gov/genome/">NCBI Genomes</a>: Provides access to genomic data and tools for genomic research.</li>
+                <li><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">BLAST</a>: A tool for comparing primary biological sequence information.</li>
+                <li><a href="https://www.ncbi.nlm.nih.gov/structure">NCBI Structure</a>: Offers access to information on molecular structures.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further information, please visit our <a href="https://www.ncbi.nlm.nih.gov/contact/">Contact Page</a> for support and contact details.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 National Center for Biotechnology Information</p>
+    </footer>
+</body>
+</html>
