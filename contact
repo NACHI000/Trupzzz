@@ -1,0 +1,119 @@
+<?php
+include 'db.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NCBI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .contact-form,
+        .contact-info,
+        .map {
+            margin-bottom: 2em;
+        }
+
+        .contact-form form {
+            display: grid;
+            gap: 1em;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 0.7em;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #555;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact NCBI</h1>
+    </header>
+    <main>
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <p><strong>Address:</strong> 8600 Rockville Pike, Bethesda, MD 20894, USA</p>
+            <p><strong>Phone:</strong> +1 301-496-6280</p>
+            <p><strong>Email:</strong> <a href="mailto:info@ncbi.nlm.nih.gov">info@ncbi.nlm.nih.gov</a></p>
+        </section>
+        <section class="map">
+            <h2>Find Us</h2>
+            <!-- Replace with an actual map iframe if available -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.847947827425!2d-77.1043815846551!3d39.0187586794599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b9b71dbd9fb7%3A0x8d40e7dc87399e2!2s8600%20Rockville%20Pike%2C%20Bethesda%2C%20MD%2020894%2C%20USA!5e0!3m2!1sen!2sin!4v1601234567890" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 National Center for Biotechnology Information</p>
+    </footer>
+</body>
+</html>
