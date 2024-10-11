@@ -1,0 +1,134 @@
+<?php
+include 'db.php'; // Include your database connection file
+
+// Fetch data from wd table
+$sql = "SELECT * FROM wd";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WD Table</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .search-container {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .search-container label {
+            font-size: 16px;
+            color: #333333;
+        }
+        .search-container select,
+        .search-container button {
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333333;
+            outline: none;
+        }
+        .search-container select {
+            flex: 1;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+        .search-container button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #cccccc;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>WD Table Data</h1>
+
+    <div class="search-container">
+        <label for="select-id">Select Accession ID:</label>
+        <select id="select-id">
+            <option value="">Select Accession ID :</option>
+            <option value="PP101260">PP101260</option>
+            <option value="PP587558">PP587558</option>
+            <option value="PP930983">PP930983</option>
+            <option value="PP123456">PP123456</option>
+            <option value="PP234567">PP234567</option>
+            <option value="PP345678">PP345678</option>
+            <option value="PP456789">PP456789</option>
+            <option value="PP567890">PP567890</option>
+            <option value="PP678901">PP678901</option>
+            <option value="PP789012">PP789012</option>
+            <option value="PP890123">PP890123</option>
+            <option value="PP901234">PP901234</option>
+            <option value="PP012345">PP012345</option>
+        </select>
+        <button type="submit">Search</button>
+    </div>
+
+    <?php if ($result->num_rows > 0): ?>
+        <table>
+            <tr>
+                <th>Database Accession</th>
+                <th>Source</th>
+                <th>Length</th>
+                <th>MOL-Type</th>
+                <th>Topology</th>
+                <th>Division</th>
+                <th>Sequence in FASTA</th>
+            </tr>
+            <?php while($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['COL 1']; ?></td>
+                    <td><?php echo $row['COL 2']; ?></td>
+                    <td><?php echo $row['COL 3']; ?></td>
+                    <td><?php echo $row['COL 4']; ?></td>
+                    <td><?php echo $row['COL 5']; ?></td>
+                    <td><?php echo $row['COL 6']; ?></td>
+                    <td><?php echo $row['COL 7']; ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    <?php else: ?>
+        <p>No results found.</p>
+    <?php endif; ?>
+
+    <?php $conn->close(); ?>
+</body>
+</html>
